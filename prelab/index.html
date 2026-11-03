@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab Safety Prelab</title>
+  <meta name="description" content="Safety prelab for Daytona State chemistry labs: dress code, ground rules, safety equipment, chemicals and heat, waste, emergencies, and the 3D lab safety inspection.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231c4c9a'/%3E%3Cpath d='M16 5 L28 26 H4 Z' fill='%23f7be2d'/%3E%3Crect x='15' y='12' width='2.4' height='8' fill='%23111'/%3E%3Crect x='15' y='21.5' width='2.4' height='2.4' fill='%23111'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --paper: #ffffff;
+      --wash: #f3f6f4;
+      --ink: #17211e;
+      --ink-soft: #4b5854;
+      --ink-faint: #74807c;
+      --rule: #c7d1cc;
+      --rule-strong: #8d9994;
+      --enamel: #1c4c9a;
+      --enamel-deep: #153a78;
+      --enamel-wash: #e9eff9;
+      --good: #1b7a40;
+      --good-wash: #edf7f0;
+      --flag: #ab2a1c;
+      --flag-wash: #fdf1ee;
+      --acid: #c41e3a;
+      --base: #3a2e8f;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .sheet { max-width: 1040px; margin: 0 auto; padding: 0 20px 64px; }
+
+    a { color: var(--enamel-deep); }
+    a:hover { color: var(--enamel); }
+
+    /* ---- Masthead ---- */
+
+    .masthead {
+      padding: 28px 20px 26px;
+      background: var(--wash);
+      border-bottom: 1px solid var(--rule);
+    }
+    .masthead-inner { max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 28px; }
+    .eyebrow { margin: 0 0 4px; color: var(--ink-faint); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    h1 { margin: 0; font-family: var(--serif); font-size: 2.1rem; font-weight: 600; line-height: 1.15; }
+    .dek { margin: 8px 0 0; max-width: 60ch; color: var(--ink-soft); }
+    .lab-button {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 16px; border-radius: 6px;
+      background: var(--enamel); color: #fff; font-weight: 600; text-decoration: none; white-space: nowrap;
+    }
+    .lab-button:hover { background: var(--enamel-deep); color: #fff; }
+
+    /* ---- Sections ---- */
+
+    section { margin-top: 44px; }
+    h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-family: var(--serif); font-size: 1.5rem; font-weight: 600; line-height: 1.25; }
+    .step {
+      display: inline-flex; flex: none; align-items: center; justify-content: center;
+      width: 1.75rem; height: 1.75rem; border-radius: 50%;
+      background: var(--enamel); color: #fff; font-family: var(--sans); font-size: 0.92rem; font-weight: 650;
+    }
+    h3 { margin: 26px 0 10px; font-family: var(--serif); font-size: 1.18rem; font-weight: 600; }
+    p { margin: 0 0 12px; }
+    .prose { max-width: 68ch; }
+    .soft { color: var(--ink-soft); }
+    .ion { white-space: nowrap; font-weight: 600; }
+
+    /* ---- Self-check ---- */
+
+    .quiz { display: grid; gap: 14px; max-width: 760px; margin: 0; padding: 0; list-style: none; counter-reset: q; }
+    .q { padding: 14px 16px 12px; border: 1px solid var(--rule); border-radius: 8px; counter-increment: q; }
+    .q-text { margin: 0 0 10px; font-weight: 600; }
+    .q-text::before { content: counter(q) ". "; color: var(--ink-faint); }
+    .options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .options button {
+      padding: 7px 12px; border: 1.5px solid var(--rule-strong); border-radius: 6px; background: #fff;
+      color: var(--ink); font: inherit; font-size: 0.95rem; text-align: left; cursor: pointer;
+    }
+    .options button:hover { border-color: var(--enamel); background: var(--enamel-wash); }
+    .options button[data-state="right"] { border-color: var(--good); background: var(--good-wash); color: var(--good); font-weight: 600; }
+    .options button[data-state="wrong"] { border-color: var(--flag); background: var(--flag-wash); color: var(--flag); }
+    .feedback { margin: 10px 0 0; font-size: 0.95rem; }
+    .feedback:empty { display: none; }
+    .feedback b.right { color: var(--good); }
+    .feedback b.wrong { color: var(--flag); }
+    .score { margin: 16px 0 0; font-weight: 600; }
+    .score .done { color: var(--good); }
+
+    /* ---- Footer ---- */
+
+    .next { margin-top: 40px; padding: 18px 20px; border-radius: 10px; background: var(--wash); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; }
+    .next p { margin: 0; max-width: 60ch; }
+    .sources { margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 0.86rem; color: var(--ink-soft); }
+    .sources h2 { font-size: 1.1rem; }
+    .sources ol { margin: 0; padding-left: 1.4em; }
+    .sources li { margin-bottom: 4px; }
+    .sources a { color: inherit; overflow-wrap: anywhere; }
+
+    
+    .admit { margin-top: 28px; padding: 14px 18px; border-left: 4px solid var(--flag); background: var(--flag-wash); border-radius: 0 8px 8px 0; }
+    .admit p { margin: 0; max-width: 75ch; }
+    .ppe { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; margin: 16px 0 6px; }
+    .ppe-card { padding: 14px 16px 8px; border: 1px solid var(--rule); border-radius: 8px; border-top: 6px solid var(--enamel); }
+    .ppe-card h3 { margin: 0 0 8px; }
+    .ppe-card p { font-size: 0.95rem; margin-bottom: 8px; }
+    .ok b { color: var(--good); } .no b { color: var(--flag); }
+    .explorer { margin-top: 18px; padding: 18px 18px 14px; border: 1px solid var(--rule); border-radius: 10px; background: #fbfcfb; }
+    .explorer-help { margin: 0 0 14px; color: var(--ink-soft); font-size: 0.95rem; }
+    .dress-row { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 10px; align-items: center; margin-bottom: 10px; }
+    .dress-label { font-weight: 650; color: var(--ink-soft); }
+    .verdict { margin: 12px 0 0; padding: 10px 14px; border-radius: 6px; background: var(--wash); min-height: 1.5em; }
+    .verdict.ok { background: var(--good-wash); } .verdict.ok b { color: var(--good); }
+    .verdict.no { background: var(--flag-wash); } .verdict.no b { color: var(--flag); }
+    .rules { max-width: 72ch; padding-left: 1.4em; } .rules li { margin-bottom: 8px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px; margin-top: 12px; }
+    .card { padding: 14px 16px 6px; border: 1px solid var(--rule); border-left: 5px solid var(--enamel); border-radius: 8px; background: #fff; }
+    .card.flagcard { border-left-color: var(--flag); }
+    .card h4 { margin: 0 0 6px; font-size: 1.02rem; }
+    .card p { margin: 0 0 8px; font-size: 0.95rem; }
+    .numbers { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .numbers div { display: flex; flex-direction: column; padding: 12px 18px; border-radius: 8px; background: var(--flag-wash); border: 1px solid #efc9c2; min-width: 12rem; }
+    .numbers .num { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; color: var(--flag); line-height: 1.1; }
+    .callout { padding: 16px 18px 6px; border-radius: 8px; background: var(--enamel-wash); border: 1px solid #cfdcf1; }
+    .options button[aria-pressed="true"] { outline: none; }
+    @media (max-width: 600px) {
+      body { font-size: 16px; } .sheet { padding: 0 16px 48px; } .masthead { padding: 22px 16px 20px; } h1 { font-size: 1.7rem; }
+      .dress-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+    }
+    @media print { .explorer, .lab-button, .next { display: none !important; } .masthead { background: none; } section { break-inside: avoid-page; } }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div>
+        <p class="eyebrow">Safety prelab · Daytona State chemistry labs</p>
+        <h1>Lab safety: what keeps you in the lab, and in one piece</h1>
+        <p class="dek">About fifteen minutes. Read this before your first lab, try the dress check, then walk the 3D lab and find what's wrong. The graded Lab Safety quiz is on Falcon Online.</p>
+      </div>
+      <a class="lab-button" href="../">Enter the lab safety inspection <span aria-hidden="true">→</span></a>
+    </div>
+  </header>
+
+<div class="sheet">
+  <main>
+    <div class="admit">
+      <p><strong>You will not be admitted to lab without the right protective equipment.</strong> Make-up labs are not guaranteed. You also need a score of <strong>70% or higher</strong> on the Lab Safety quiz before you can work in the lab room. If you don't follow the safety rules, you can be removed from the lab and get a zero for that experiment.</p>
+    </div>
+
+    <section id="dress" aria-labelledby="dress-title">
+      <h2 id="dress-title"><span class="step" aria-hidden="true">1</span>Dress for the lab before you leave home</h2>
+      <p class="prose">Your clothes are part of your protection. Chemical splashes land on arms, legs and feet, and long hair can sweep into a flame. Here is what counts as acceptable personal protective equipment (PPE).</p>
+
+      <div class="ppe">
+        <article class="ppe-card">
+          <h3>Safety eyewear</h3>
+          <p class="ok"><b>Good:</b> Z87 safety rating, colorless lenses, fits well over glasses if you wear them.</p>
+          <p class="no"><b>Not OK:</b> ordinary glasses, sunglasses, colored lenses, poor fit over glasses.</p>
+          <p class="soft">State and federal law require approved eye protection for anyone working in a lab. Buy your own approved pair, even if you wear glasses. Goggles go over your eyes the whole time, not on your forehead.</p>
+        </article>
+        <article class="ppe-card">
+          <h3>Top</h3>
+          <p class="ok"><b>Good:</b> long sleeves that reach the wrist (a lab jacket, a hoodie), covering front and back from the shoulders to the upper thigh, fits well, no holes.</p>
+          <p class="no"><b>Not OK:</b> short sleeves, too tight, too short, leaves the back, shoulders or midsection uncovered, has holes.</p>
+          <p class="soft">Cotton or cotton blends are best: they are reasonably fire resistant.</p>
+        </article>
+        <article class="ppe-card">
+          <h3>Pants, skirt or dress</h3>
+          <p class="ok"><b>Good:</b> ankle length, reasonably loose, no holes, meets the top with no gap.</p>
+          <p class="no"><b>Not OK:</b> capris, shorts, short skirts, leggings, skinny jeans, holes, a gap at the waist.</p>
+        </article>
+        <article class="ppe-card">
+          <h3>Shoes</h3>
+          <p class="ok"><b>Good:</b> closed toe and heel, covering the entire top of the foot, such as athletic shoes or boots.</p>
+          <p class="no"><b>Not OK:</b> sandals, open toe or heel, ballerina flats, boat shoes, Crocs.</p>
+        </article>
+        <article class="ppe-card">
+          <h3>Hair</h3>
+          <p class="ok"><b>Good:</b> shoulder-length or longer hair pulled back and fastened with a secure tie (a scrunchie works).</p>
+          <p class="no"><b>Not OK:</b> long hair loose. It is very flammable and can sweep into a beaker or a burner flame.</p>
+        </article>
+      </div>
+
+      <div class="explorer" id="dresscheck">
+        <h3 style="margin-top:0">Try it: would this student be admitted?</h3>
+        <p class="explorer-help">Pick one item in each row. The verdict updates as you go.</p>
+        <div id="dress-rows"></div>
+        <p class="verdict" id="verdict" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="rules" aria-labelledby="rules-title">
+      <h2 id="rules-title"><span class="step" aria-hidden="true">2</span>The ground rules</h2>
+      <p class="prose">These are the standards for acceptable conduct in every Daytona State chemistry lab. They are short because each one comes from a real way people get hurt.</p>
+      <ol class="rules">
+        <li><b>No food or drink.</b> Don't bring anything to eat or drink into the lab, not even with a lid. Food and drink are easily contaminated.</li>
+        <li><b>No smoking or vaping.</b> A lit cigarette or a vape is an ignition and battery source near flammable vapors.</li>
+        <li><b>Goggles on, always,</b> the whole time you are in the lab, even when you are only writing.</li>
+        <li><b>No horseplay or practical jokes.</b> They can cause serious injury.</li>
+        <li><b>Only the authorized experiment.</b> Follow the procedure in order. Any change needs your instructor's OK.</li>
+        <li><b>Nothing in, nothing out.</b> Don't bring apparatus or reagents into the lab, and don't take any out.</li>
+        <li><b>Report every injury,</b> even small cuts and minor chemical or heat burns, to your instructor right away.</li>
+        <li><b>Backpacks off the floor.</b> Bags go on the tables or in the cubbies under the benches, never in the aisles.</li>
+        <li><b>Stay out of the stockroom.</b> It is a restricted area.</li>
+        <li><b>Wash your hands before you leave,</b> so you don't carry contamination out with you.</li>
+      </ol>
+    </section>
+
+    <section id="where" aria-labelledby="where-title">
+      <h2 id="where-title"><span class="step" aria-hidden="true">3</span>Know where the safety equipment is</h2>
+      <p class="prose">In an emergency you won't have time to look around. Learn where these are on your first day. In the 3D lab, every one of them is clickable.</p>
+      <div class="cards">
+        <div class="card"><h4>Eyewash</h4><p>At the safety station in the corner. Push the paddle, hold your eyelids open with your fingers, and flush for at least 15 minutes. Keep the counter around it clear.</p></div>
+        <div class="card"><h4>Safety shower</h4><p>Above the safety station. Stand under it and pull the yellow triangle down. Use it for a large chemical splash on your body or for clothing on fire. Never block the area under it.</p></div>
+        <div class="card"><h4>Fire blanket</h4><p>In the bright orange bag on the safety station shelf. Use it to smother a clothing fire after stop, drop and roll.</p></div>
+        <div class="card"><h4>First-aid kit</h4><p>On the lower shelf of the safety station. For minor cuts and burns, and you still report every injury.</p></div>
+        <div class="card"><h4>Fire extinguisher</h4><p>In the cabinet by the stockroom door. P.A.S.S.: Pull the pin, Aim at the base, Squeeze, Sweep. Only for small fires, only if trained, and only with a clear exit behind you.</p></div>
+        <div class="card"><h4>Gas and power shutoffs</h4><p>The gas shutoff valves and the red emergency power cutoff are for your instructor to use in a gas leak or electrical emergency.</p></div>
+        <div class="card"><h4>Exits and the procedures chart</h4><p>Know where both doors are. The emergency procedures flip chart by the door covers fire, severe weather, evacuation, first aid and hurricanes.</p></div>
+        <div class="card"><h4>Spill kit</h4><p>Absorbent, sand and acid neutralizer. Alert people nearby and tell your instructor before anyone cleans up a spill.</p></div>
+      </div>
+      <div class="numbers">
+        <div><span class="num">911</span><span>Emergency</span></div>
+        <div><span class="num">9-911</span><span>Emergency from a campus phone</span></div>
+        <div><span class="num">ext. 4444</span><span>Campus Safety</span></div>
+      </div>
+    </section>
+
+    <section id="working" aria-labelledby="working-title">
+      <h2 id="working-title"><span class="step" aria-hidden="true">4</span>Working with chemicals and heat</h2>
+      <div class="cards">
+        <div class="card"><h4>Read the label twice</h4><p>Names can be one letter apart (potassium nitrate vs. potassium nitrite), and the concentration matters too. The wrong bottle can make a reaction run much faster than expected.</p></div>
+        <div class="card"><h4>Take only what you need</h4><p>Measure out only the amount the procedure calls for. Never pour extra back into the original bottle; it can contaminate everyone's reagent.</p></div>
+        <div class="card"><h4>Acid into water</h4><p>When diluting an acid or base, pour it slowly into the water, never water into acid (A to W). Adding water to concentrated acid can boil and splatter.</p></div>
+        <div class="card"><h4>Use the fume hood</h4><p>Work with gases, vapors or smells in the hood. Keep the sash at the marked working height (about 18 in), and close it when the hood is not in use.</p></div>
+        <div class="card"><h4>Hot equipment</h4><p>The single biggest source of lab injuries. Hot plates, burners, and the glassware on them stay hot far longer than you think, and hot glass looks just like cold glass. Never leave a hot plate on and unattended.</p></div>
+        <div class="card"><h4>Flammables cabinet</h4><p>Flammable liquids live inside the yellow cabinet with the doors closed and latched. Nothing gets stored on top of it.</p></div>
+      </div>
+    </section>
+
+    <section id="waste" aria-labelledby="waste-title">
+      <h2 id="waste-title"><span class="step" aria-hidden="true">5</span>Waste and cleanup</h2>
+      <div class="cards">
+        <div class="card"><h4>Chemical waste</h4><p>Use the waste containers provided. Organic waste goes in the bottle in the fume hood: lift the red funnel lid, pour slowly, close the lid. Pouring onto a closed lid makes a spill.</p></div>
+        <div class="card"><h4>Never down the sink</h4><p>Organic solvents and other chemicals do not go down the drain. They can be flammable and pollute the water. If you're unsure, ask your instructor.</p></div>
+        <div class="card"><h4>Broken glass</h4><p>Into the blue and white broken glass container, never the wastebasket. Sweep it up with a brush and dustpan, not your hands, and tell your instructor.</p></div>
+        <div class="card"><h4>Wastebasket</h4><p>Only solid, non-hazardous items like litmus paper, matches and filter paper.</p></div>
+        <div class="card"><h4>Leave it clean</h4><p>Clean your glassware, sponge off the bench and the shelves above it, dry with a paper towel, rinse reagent bottles before returning them, and brush any spilled powder off the balance.</p></div>
+      </div>
+    </section>
+
+    <section id="emerg" aria-labelledby="emerg-title">
+      <h2 id="emerg-title"><span class="step" aria-hidden="true">6</span>If something goes wrong</h2>
+      <div class="cards">
+        <div class="card flagcard"><h4>Chemical in your eyes</h4><p>Get to the eyewash, hold your eyes open, and flush for at least 15 minutes. Shout for help so your instructor knows.</p></div>
+        <div class="card flagcard"><h4>Large splash on your body</h4><p>Get under the safety shower, pull the handle, remove contaminated clothing, and rinse for 15 minutes.</p></div>
+        <div class="card flagcard"><h4>Clothing on fire</h4><p>Stop, drop and roll. Smother the flames with the fire blanket, or get under the safety shower. Never run: it feeds the fire.</p></div>
+        <div class="card flagcard"><h4>Spill</h4><p>Warn the people around you, keep everyone out of it, and tell your instructor right away.</p></div>
+        <div class="card flagcard"><h4>Any injury</h4><p>Cuts, burns, anything: report it to your instructor immediately, however small. For a medical emergency, call 911 (9-911 from a campus phone).</p></div>
+      </div>
+    </section>
+
+    <section id="inspect" aria-labelledby="inspect-title">
+      <h2 id="inspect-title"><span class="step" aria-hidden="true">7</span>In the virtual lab</h2>
+      <div class="callout prose">
+        <p>The 3D lab is a model of our actual chemistry lab. Each time you enter, <strong>five random hazards</strong> are hidden somewhere in the room, things like a drink on a bench, a fume hood sash left wide open, or a classmate without goggles. Some are emergencies you'll have to respond to.</p>
+        <p>Walk around (W A S D and the mouse), and click anything that looks unsafe. Safety equipment is clickable too. Press <strong>Enter</strong> when you're done to see your inspection report: what you found, what you missed, and what to do about it. Press <strong>N</strong> for a new inspection; every one is different.</p>
+      </div>
+    </section>
+
+    <section id="check" aria-labelledby="check-title">
+      <h2 id="check-title"><span class="step" aria-hidden="true">8</span>Check yourself</h2>
+      <p class="prose">Not graded. Pick an answer to see whether it's right and why; you can change your answer as often as you like. The graded Lab Safety quiz is on Falcon Online.</p>
+      <ol class="quiz" id="quiz"></ol>
+      <p class="score" id="score" aria-live="polite"></p>
+    </section>
+
+    <div class="next">
+      <p><strong>Ready?</strong> Enter the lab, find all five hazards, and check your report. Then take the Lab Safety quiz on Falcon Online.</p>
+      <a class="lab-button" href="../">Enter the lab safety inspection <span aria-hidden="true">→</span></a>
+    </div>
+
+    <section class="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Sources</h2>
+      <ol>
+        <li>Daytona State College, CHM 1025L course syllabus, safety rules and PPE requirements (Fall 2026).</li>
+        <li>Daytona State College, Recommended Emergency Procedures (posted in the lab).</li>
+        <li>American Chemical Society, Committee on Chemical Safety. <i>Safety in Academic Chemistry Laboratories</i>, 8th ed.</li>
+        <li>ANSI/ISEA Z87.1, American National Standard for Occupational and Educational Personal Eye and Face Protection Devices.</li>
+      </ol>
+    </section>
+  </main>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  // ---- Dress check ----
+  var ROWS = [
+    { name: 'Eyes', opts: [
+      { t: 'Z87 goggles', ok: true }, { t: 'Regular eyeglasses', ok: false, why: 'regular glasses are not safety rated' },
+      { t: 'Sunglasses', ok: false, why: 'sunglasses are not safety eyewear' }, { t: 'Goggles on the forehead', ok: false, why: 'goggles have to be over the eyes' } ] },
+    { name: 'Top', opts: [
+      { t: 'Long-sleeve hoodie', ok: true }, { t: 'Lab jacket', ok: true },
+      { t: 'T-shirt', ok: false, why: 'sleeves must reach the wrist' }, { t: 'Crop top', ok: false, why: 'the midsection must be covered' } ] },
+    { name: 'Bottom', opts: [
+      { t: 'Loose jeans, ankle length', ok: true }, { t: 'Leggings', ok: false, why: 'leggings are too tight' },
+      { t: 'Shorts', ok: false, why: 'pants must reach the ankle' }, { t: 'Ripped jeans', ok: false, why: 'no holes allowed' } ] },
+    { name: 'Shoes', opts: [
+      { t: 'Athletic shoes', ok: true }, { t: 'Boots', ok: true },
+      { t: 'Crocs', ok: false, why: 'Crocs leave the top of the foot open' }, { t: 'Sandals', ok: false, why: 'shoes must cover the toe and heel' }, { t: 'Ballerina flats', ok: false, why: 'flats leave the top of the foot uncovered' } ] },
+    { name: 'Long hair', opts: [
+      { t: 'Tied back', ok: true }, { t: 'Short hair', ok: true }, { t: 'Loose', ok: false, why: 'long hair must be tied back' } ] }
+  ];
+  var pick = ROWS.map(function () { return -1; });
+  var rowsEl = $('dress-rows');
+  ROWS.forEach(function (row, ri) {
+    var line = el('div', 'dress-row');
+    var lab = el('span', 'dress-label', row.name); lab.id = 'dr' + ri; line.appendChild(lab);
+    var g = el('div', 'options'); g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', lab.id);
+    row.opts.forEach(function (o, oi) {
+      var b = el('button', null, o.t); b.type = 'button'; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        pick[ri] = oi;
+        Array.prototype.forEach.call(g.children, function (c, j) { c.setAttribute('aria-pressed', j === oi ? 'true' : 'false'); c.removeAttribute('data-state'); });
+        b.setAttribute('data-state', o.ok ? 'right' : 'wrong');
+        verdict();
+      });
+      g.appendChild(b);
+    });
+    line.appendChild(g); rowsEl.appendChild(line);
+  });
+  function verdict() {
+    var v = $('verdict'); v.textContent = ''; v.className = 'verdict';
+    var problems = [], missing = 0;
+    pick.forEach(function (p, i) { if (p < 0) missing++; else if (!ROWS[i].opts[p].ok) problems.push(ROWS[i].opts[p].why); });
+    if (problems.length) { v.className = 'verdict no'; v.appendChild(el('b', null, 'Not admitted. ')); v.appendChild(document.createTextNode(problems.join('; ') + '.')); return; }
+    if (missing) { v.textContent = 'So far so good. Pick an item in every row.'; return; }
+    v.className = 'verdict ok'; v.appendChild(el('b', null, 'Admitted. ')); v.appendChild(document.createTextNode('Every item meets the PPE requirements.'));
+  }
+
+  // ---- Self-check ----
+  var QUESTIONS = [
+    { q: 'You wear prescription glasses. What do you wear in the lab?', options: ['Your glasses are enough', 'Z87 safety goggles over your glasses', 'Sunglasses over your glasses', 'Goggles only when you are pouring'], answer: 1,
+      why: 'Ordinary glasses are not safety rated. Approved Z87 eyewear goes over them, the whole time you are in the lab.' },
+    { q: 'Which outfit gets you into the lab?', options: ['T-shirt, jeans, athletic shoes', 'Hoodie, leggings, athletic shoes', 'Hoodie, loose ankle-length jeans, athletic shoes', 'Hoodie, loose jeans, Crocs'], answer: 2,
+      why: 'Sleeves to the wrist, ankle-length pants that aren’t tight, and shoes that cover the toe, heel and top of the foot.' },
+    { q: 'You are thirsty halfway through lab. What do you do?', options: ['Sip from a capped bottle at your bench', 'Drink it quickly by the door', 'Step outside the lab, after washing your hands', 'Keep the bottle in your backpack under the bench'], answer: 2,
+      why: 'Nothing to eat or drink comes into the lab. Wash up and take a drink outside.' },
+    { q: 'A beaker breaks on your bench. Where does the glass go?', options: ['The wastebasket', 'The sink', 'The blue and white broken glass container', 'The organic waste bottle'], answer: 2,
+      why: 'Sweep it up with a brush and dustpan, put it in the broken glass container, and tell your instructor.' },
+    { q: 'You have a little organic solvent left over. Where does it go?', options: ['Down the sink with lots of water', 'Back into the stock bottle', 'Into the organic waste bottle in the hood, through the funnel', 'Pour it on the waste funnel lid'], answer: 2,
+      why: 'Lift the red lid, pour into the funnel, close the lid. Never down the drain, and never back into the stock bottle.' },
+    { q: 'You are diluting concentrated acid. What is the correct order?', options: ['Water into acid', 'Acid into water', 'Either way is fine', 'Mix them in a dry beaker first'], answer: 1,
+      why: 'A to W: add the acid slowly to the water. Water added to concentrated acid can boil and spatter.' },
+    { q: 'A chemical splashes in your eye. How long do you flush at the eyewash?', options: ['A few seconds', 'One minute', 'At least 15 minutes', 'Until it stops stinging'], answer: 2,
+      why: 'Hold your eyelids open and flush for at least 15 minutes, and call out so your instructor knows.' },
+    { q: 'A classmate’s sleeve catches fire. Which response is right?', options: ['Run to the sink', 'Stop, drop and roll, then smother it with the fire blanket or use the shower', 'Spray them with the fire extinguisher', 'Throw water from a beaker on it'], answer: 1,
+      why: 'Running fans the flames. Stop, drop and roll, then smother with the blanket from the orange bag or get under the safety shower.' },
+    { q: 'You get a tiny cut from a chipped test tube. What do you do?', options: ['Nothing, it is tiny', 'Put on a bandage and keep working without telling anyone', 'Report it to your instructor right away', 'Report it at the end of the semester'], answer: 2,
+      why: 'Report every injury, even minor ones, immediately.' },
+    { q: 'Which of these is the single biggest source of lab injuries?', options: ['Broken glass', 'Hot equipment', 'Acids', 'Electricity'], answer: 1,
+      why: 'Hot plates, burners and hot glassware stay hot longer than you think, and hot glass looks like cold glass.' }
+  ];
+  var quiz = $('quiz');
+  var state = QUESTIONS.map(function () { return null; });
+  QUESTIONS.forEach(function (q, qi) {
+    var li = el('li', 'q');
+    var text = el('p', 'q-text', q.q); text.id = 'q' + qi; li.appendChild(text);
+    var opts = el('div', 'options'); opts.setAttribute('role', 'group'); opts.setAttribute('aria-labelledby', text.id);
+    var fb = el('p', 'feedback'); fb.setAttribute('aria-live', 'polite');
+    q.options.forEach(function (o, oi) {
+      var btn = el('button', null, o); btn.type = 'button';
+      btn.addEventListener('click', function () {
+        state[qi] = oi === q.answer;
+        Array.prototype.forEach.call(opts.children, function (b2, j) { b2.removeAttribute('data-state'); b2.setAttribute('aria-pressed', j === oi ? 'true' : 'false'); });
+        btn.setAttribute('data-state', state[qi] ? 'right' : 'wrong');
+        fb.textContent = '';
+        fb.appendChild(el('b', state[qi] ? 'right' : 'wrong', state[qi] ? 'Right. ' : 'Not quite. '));
+        fb.appendChild(document.createTextNode(state[qi] ? q.why : 'Try another answer.'));
+        score();
+      });
+      opts.appendChild(btn);
+    });
+    li.appendChild(opts); li.appendChild(fb); quiz.appendChild(li);
+  });
+  function score() {
+    var answered = state.filter(function (s) { return s !== null; }).length;
+    var right = state.filter(function (s) { return s === true; }).length;
+    var out = $('score'); out.textContent = '';
+    if (!answered) return;
+    if (right === QUESTIONS.length) { out.appendChild(el('span', 'done', 'All ' + right + ' right. You’re ready for the inspection.')); return; }
+    out.textContent = right + ' of ' + QUESTIONS.length + ' right so far.';
+  }
+})();
+</script>
+</body>
+</html>
