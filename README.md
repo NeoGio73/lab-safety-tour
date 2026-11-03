@@ -9,4 +9,4 @@ Controls: click to look around, WASD or arrow keys to walk, look at safety equip
 Prof. John Picione, Department of Biological and Physical Sciences, Daytona State College.
 
 
-**Safety inspection mode:** each visit hides 5 random hazards (out of 14) around the lab, such as a drink on a bench, a backpack in the aisle, waste poured on a closed funnel lid, organics down the sink, a blocked eyewash or shower, or a sash left wide open. Find them and click each one to learn the correct action. Press N for a new random inspection.
+**Safety inspection mode:** each visit hides 5 random hazards (out of 14) around the lab, such as a drink on a bench, a backpack in the aisle, waste poured on a closed funnel lid, organics down the sink, a blocked eyewash or shower, a sash left wide open, or a classmate without goggles. Four students work at the benches and hoods each round. Find them and click each one to learn the correct action. Press N for a new random inspection.
