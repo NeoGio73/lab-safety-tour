@@ -11,7 +11,10 @@ Controls: click to look around, WASD or arrow keys to walk, look at safety equip
 Prof. John Picione, Department of Biological and Physical Sciences, Daytona State College.
 
 
-**Safety inspection mode:** a short intro explains the task, then each visit hides 5 random hazards (out of 19) around the lab: food or a drink on a bench, a vape, a backpack in the aisle, reagents on top of or the door left open on the flammables cabinet, waste poured on the closed funnel lid, organics down the sink, powder on the balance, broken glass in the trash, a floor spill, a blocked eyewash, shower or extinguisher, a fume hood sash left wide open, a classmate without goggles, or a hot plate left on, a classmate in shorts or in short sleeves and skinny jeans, or a classmate whose sleeve catches fire (answer the emergency question correctly to put it out). Four students work at the benches and hoods each round. Click each hazard to learn the correct action; whatever you look at gets a gold outline. Press N for a new random inspection.
+**Safety inspection mode:** a short intro explains the task, then each visit hides 5 random hazards (out of 19) around the lab: food or a drink on a bench, a vape, a backpack in the aisle, reagents on top of or the door left open on the flammables cabinet, waste poured on the closed funnel lid, organics down the sink, powder on the balance, broken glass in the trash, a floor spill, a blocked eyewash, shower or extinguisher, a fume hood sash left wide open, a classmate without goggles, or a hot plate left on, a classmate in shorts, short sleeves, a strapless top or ripped skinny jeans, or a classmate whose sleeve catches fire (answer the emergency question correctly to put it out). Four students work at the benches and hoods each round. Click each hazard to learn the correct action; whatever you look at gets a gold outline. Press N for a new random inspection.
 
 
 **Inspection report:** press Enter at any time (or find all 5 hazards) to see a report of what was found and missed, with what to do for each missed hazard, the time, and any wrong answers on emergency questions. Students can screenshot it for credit.
+
+
+Credits: student characters from Adobe Mixamo; one character (Alison) is a free rigged sample from Renderpeople.
