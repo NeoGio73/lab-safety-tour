@@ -134,6 +134,31 @@
     .numbers .num { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; color: var(--flag); line-height: 1.1; }
     .callout { padding: 16px 18px 6px; border-radius: 8px; background: var(--enamel-wash); border: 1px solid #cfdcf1; }
     .options button[aria-pressed="true"] { outline: none; }
+
+    /* ---- Labels, SDS and signs ---- */
+    .pictos { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; margin: 12px 0 4px; }
+    .picto { text-align: center; font-size: 0.86rem; color: var(--ink-soft); }
+    .picto svg { width: 74px; height: 74px; display: block; margin: 0 auto 4px; }
+    .picto b { display: block; color: var(--ink); font-size: 0.9rem; }
+    .labelbox { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: start; margin-top: 12px; }
+    .ghs-label { border: 2px solid var(--ink); border-radius: 6px; padding: 12px 14px; background: #fff; font-size: 0.9rem; }
+    .ghs-label .pname { font-weight: 700; font-size: 1.1rem; margin: 0 0 6px; }
+    .ghs-label .sig { font-weight: 800; letter-spacing: 0.06em; color: var(--flag); margin: 6px 0; }
+    .ghs-label .row { display: flex; gap: 8px; align-items: center; }
+    .ghs-label .row svg { width: 54px; height: 54px; flex: none; }
+    .ghs-label p { margin: 4px 0; }
+    .annot { margin: 0; padding-left: 1.1em; font-size: 0.93rem; }
+    .annot li { margin-bottom: 6px; }
+    .nfpa { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; margin-top: 10px; }
+    .nfpa figure { margin: 0; text-align: center; font-size: 0.86rem; color: var(--ink-soft); }
+    .nfpa svg { width: 120px; height: 120px; display: block; margin: 0 auto 4px; }
+    .nfpa-key { flex: 1 1 260px; margin: 0; padding-left: 1.1em; font-size: 0.93rem; }
+    .water { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.93rem; }
+    .water th, .water td { text-align: left; vertical-align: top; padding: 7px 8px; border-bottom: 1px solid var(--rule); }
+    .water th { background: var(--wash); }
+    .water .y { color: var(--good); font-weight: 650; white-space: nowrap; }
+    .water .n { color: var(--flag); font-weight: 650; white-space: nowrap; }
+    @media (max-width: 640px) { .labelbox { grid-template-columns: 1fr; } }
     @media (max-width: 600px) {
       body { font-size: 16px; } .sheet { padding: 0 16px 48px; } .masthead { padding: 22px 16px 20px; } h1 { font-size: 1.7rem; }
       .dress-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
@@ -235,6 +260,7 @@
         <div><span class="num">911</span><span>Emergency</span></div>
         <div><span class="num">9-911</span><span>Emergency from a campus phone</span></div>
         <div><span class="num">ext. 4444</span><span>Campus Safety</span></div>
+        <div><span class="num">Falcon Safe</span><span>The college safety app: emergency contacts and alerts on your phone</span></div>
       </div>
     </section>
 
@@ -250,8 +276,70 @@
       </div>
     </section>
 
+
+    <section id="hazcom" aria-labelledby="hazcom-title">
+      <h2 id="hazcom-title"><span class="step" aria-hidden="true">5</span>Read the hazards: labels, safety data sheets and signs</h2>
+      <p class="prose">Every chemical tells you how it can hurt you and what to do about it, if you know where to look. Look at three places before you open a bottle: the <b>label</b>, the <b>safety data sheet (SDS)</b>, and any <b>hazard sign</b> on the door or the cabinet.</p>
+
+      <h3>The label</h3>
+      <div class="labelbox">
+        <div class="ghs-label" aria-label="Example label for acetone">
+          <p class="pname">Acetone</p>
+          <div class="row"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="17" y="17" width="66" height="66" transform="rotate(45 50 50)" fill="#fff" stroke="#d0021b" stroke-width="7" stroke-linejoin="round"/><path d="M50 24c4 10 14 15 13 28 0 8-6 14-13 14s-13-6-13-14c0-7 5-10 6-17 3 5 3 8 5 9 1-8 0-13 2-20z" fill="#111"/><rect x="34" y="69" width="32" height="4" fill="#111"/></svg><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="17" y="17" width="66" height="66" transform="rotate(45 50 50)" fill="#fff" stroke="#d0021b" stroke-width="7" stroke-linejoin="round"/><rect x="46" y="27" width="8" height="30" rx="3" fill="#111"/><circle cx="50" cy="67" r="5" fill="#111"/></svg></div>
+          <p class="sig">DANGER</p>
+          <p>Highly flammable liquid and vapor. Causes serious eye irritation. May cause drowsiness or dizziness.</p>
+          <p class="soft">Keep away from heat, sparks and open flames. Keep container tightly closed. Use only in a well-ventilated area. IF IN EYES: rinse cautiously with water for several minutes.</p>
+        </div>
+        <ol class="annot">
+          <li><b>Name.</b> Read it twice. Check the concentration too.</li>
+          <li><b>Pictograms.</b> Red diamonds that show the kind of hazard at a glance (all nine are below).</li>
+          <li><b>Signal word.</b> <i>Danger</i> means more severe; <i>Warning</i> means less severe.</li>
+          <li><b>Hazard statements.</b> What the chemical can do to you.</li>
+          <li><b>Precautions.</b> What to do about it. "Use only in a well-ventilated area" means <b>in the fume hood</b> in our lab. "Keep away from heat" means no hot plate or flame nearby.</li>
+        </ol>
+      </div>
+      <div class="pictos"><div class="picto"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="17" y="17" width="66" height="66" transform="rotate(45 50 50)" fill="#fff" stroke="#d0021b" stroke-width="7" stroke-linejoin="round"/><path d="M50 24c4 10 14 15 13 28 0 8-6 14-13 14s-13-6-13-14c0-7 5-10 6-17 3 5 3 8 5 9 1-8 0-13 2-20z" fill="#111"/><rect x="34" y="69" width="32" height="4" fill="#111"/></svg><b>Flame</b>Flammable: keep away from hot plates and flames; store in the flammables cabinet.</div><div class="picto"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="17" y="17" width="66" height="66" transform="rotate(45 50 50)" fill="#fff" stroke="#d0021b" stroke-width="7" stroke-linejoin="round"/><circle cx="50" cy="60" r="11" fill="none" stroke="#111" stroke-width="5"/><path d="M50 24c3 7 9 10 9 18 0 5-4 8-9 8s-9-3-9-8c0-5 3-7 4-11 2 3 2 5 3 6 1-5 0-8 2-13z" fill="#111"/><rect x="34" y="73" width="32" height="4" fill="#111"/></svg><b>Flame over circle</b>Oxidizer: can make other materials burn harder. Keep away from flammables.</div><div class="picto"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="17" y="17" width="66" height="66" transform="rotate(45 50 50)" fill="#fff" stroke="#d0021b" stroke-width="7" stroke-linejoin="round"/><circle cx="46" cy="56" r="11" fill="#111"/><path d="M53 45l6-7" stroke="#111" stroke-width="3"/><g stroke="#111" stroke-width="3"><path d="M62 33l3-6M66 38l7-2M60 29l-1-6"/></g><g stroke="#111" stroke-width="3"><path d="M30 46l-5-3M30 64l-5 3M46 72v6M62 64l5 3"/></g></svg><b>Exploding bomb</b>Explosive or self-reactive. Rare in teaching labs.</div><div class="picto"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="17" y="17" width="66" height="66" transform="rotate(45 50 50)" fill="#fff" stroke="#d0021b" stroke-width="7" stroke-linejoin="round"/><rect x="27" y="44" width="40" height="15" rx="7" fill="#111"/><rect x="66" y="47" width="8" height="9" fill="#111"/></svg><b>Gas cylinder</b>Gas under pressure.</div><div class="picto"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="17" y="17" width="66" height="66" transform="rotate(45 50 50)" fill="#fff" stroke="#d0021b" stroke-width="7" stroke-linejoin="round"/><path d="M30 30l10 4-4 10-10-4z" fill="#111"/><path d="M60 30l10-4 4 10-10 4z" fill="#111"/><circle cx="36" cy="51" r="2.5" fill="#111"/><circle cx="64" cy="51" r="2.5" fill="#111"/><rect x="24" y="60" width="22" height="5" fill="#111"/><path d="M28 60l4-4 3 4z" fill="#fff"/><path d="M54 66h20v-6h-6l-3-4h-6l-5 4z" fill="#111"/></svg><b>Corrosion</b>Corrosive: burns skin and eyes, damages metal. Gloves and goggles.</div><div class="picto"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="17" y="17" width="66" height="66" transform="rotate(45 50 50)" fill="#fff" stroke="#d0021b" stroke-width="7" stroke-linejoin="round"/><ellipse cx="50" cy="42" rx="12" ry="11" fill="#111"/><rect x="43" y="49" width="14" height="8" rx="2" fill="#111"/><circle cx="45" cy="42" r="3" fill="#fff"/><circle cx="55" cy="42" r="3" fill="#fff"/><g stroke="#111" stroke-width="4" stroke-linecap="round"><path d="M33 58l34 13M67 58L33 71"/></g></svg><b>Skull and crossbones</b>Acutely toxic, even in small amounts.</div><div class="picto"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="17" y="17" width="66" height="66" transform="rotate(45 50 50)" fill="#fff" stroke="#d0021b" stroke-width="7" stroke-linejoin="round"/><circle cx="50" cy="29" r="6" fill="#111"/><path d="M38 40h24l3 34H35z" fill="#111"/><path d="M50 46l2 6 6 1-5 4 2 6-5-3-5 3 2-6-5-4 6-1z" fill="#fff"/></svg><b>Health hazard</b>Long-term harm, such as cancer or organ damage, or a breathing sensitizer.</div><div class="picto"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="17" y="17" width="66" height="66" transform="rotate(45 50 50)" fill="#fff" stroke="#d0021b" stroke-width="7" stroke-linejoin="round"/><rect x="46" y="27" width="8" height="30" rx="3" fill="#111"/><circle cx="50" cy="67" r="5" fill="#111"/></svg><b>Exclamation mark</b>Irritant, harmful, or causes drowsiness.</div><div class="picto"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="17" y="17" width="66" height="66" transform="rotate(45 50 50)" fill="#fff" stroke="#d0021b" stroke-width="7" stroke-linejoin="round"/><path d="M36 64V40M36 46l-7-6M36 50l7-7M36 56l-6-4" stroke="#111" stroke-width="3" fill="none"/><path d="M48 66c6-6 16-6 21 0-5 5-15 5-21 0zM48 66l-5-4v8z" fill="#111"/><rect x="28" y="70" width="44" height="3" fill="#111"/></svg><b>Environment</b>Toxic to aquatic life. Never down the drain.</div></div>
+      <p class="soft" style="font-size:0.85rem">Simplified drawings of the nine hazard pictograms used on chemical labels.</p>
+
+      <h3>The safety data sheet (SDS)</h3>
+      <p class="prose">Every chemical in the lab has an SDS (older ones are called MSDS). It always has the same 16 sections in the same order, so you can find what you need fast. Your instructor will show you where the lab keeps them, and you can also look one up online by the chemical's name. The sections you'll use most:</p>
+      <div class="cards">
+        <div class="card"><h4>Section 2: Hazards</h4><p>The same pictograms, signal word and hazard statements as the label.</p></div>
+        <div class="card"><h4>Section 4: First aid</h4><p>What to do for eye or skin contact, breathing it in or swallowing it.</p></div>
+        <div class="card"><h4>Section 5: Fire fighting</h4><p>Which extinguishing methods work, and which ones, such as water, must <b>not</b> be used.</p></div>
+        <div class="card"><h4>Section 7: Handling and storage</h4><p>Where it is stored (for example, the flammables cabinet) and what to keep it away from.</p></div>
+        <div class="card"><h4>Section 8: Exposure controls and PPE</h4><p>Whether you need the fume hood, gloves or other protection.</p></div>
+      </div>
+
+      <h3>The hazard diamond on doors and cabinets</h3>
+      <div class="nfpa">
+        <figure><svg viewBox="0 0 120 120" aria-hidden="true"><polygon points="60,2 89,31 60,60 31,31" fill="#d71920"/><polygon points="31,31 60,60 31,89 2,60" fill="#1f5fbf"/><polygon points="89,31 118,60 89,89 60,60" fill="#f2d21c"/><polygon points="60,60 89,89 60,118 31,89" fill="#fff"/><polygon points="60,2 118,60 60,118 2,60" fill="none" stroke="#111" stroke-width="2"/><text x="60" y="40" text-anchor="middle" font-size="22" font-weight="700" font-family="Arial" fill="#fff">3</text><text x="31" y="68" text-anchor="middle" font-size="22" font-weight="700" font-family="Arial" fill="#fff">1</text><text x="89" y="68" text-anchor="middle" font-size="22" font-weight="700" font-family="Arial">0</text></svg><figcaption>Acetone</figcaption></figure>
+        <figure><svg viewBox="0 0 120 120" aria-hidden="true"><polygon points="60,2 89,31 60,60 31,31" fill="#d71920"/><polygon points="31,31 60,60 31,89 2,60" fill="#1f5fbf"/><polygon points="89,31 118,60 89,89 60,60" fill="#f2d21c"/><polygon points="60,60 89,89 60,118 31,89" fill="#fff"/><polygon points="60,2 118,60 60,118 2,60" fill="none" stroke="#111" stroke-width="2"/><text x="60" y="40" text-anchor="middle" font-size="22" font-weight="700" font-family="Arial" fill="#fff">3</text><text x="31" y="68" text-anchor="middle" font-size="22" font-weight="700" font-family="Arial" fill="#fff">3</text><text x="89" y="68" text-anchor="middle" font-size="22" font-weight="700" font-family="Arial">2</text><text x="60" y="98" text-anchor="middle" font-size="18" font-weight="700" font-family="Arial">W</text><line x1="48" y1="92" x2="72" y2="92" stroke="#111" stroke-width="3"/></svg><figcaption>Sodium metal</figcaption></figure>
+        <ul class="nfpa-key">
+          <li><b style="color:#1f5fbf">Blue:</b> health hazard.</li>
+          <li><b style="color:#d71920">Red:</b> flammability.</li>
+          <li><b style="color:#9a7d00">Yellow:</b> instability, how easily it reacts.</li>
+          <li><b>White:</b> special hazards. A <b>W with a line through it</b> means <b>do not use water</b>; OX means oxidizer.</li>
+          <li>Numbers run from <b>0</b> (minimal) to <b>4</b> (severe).</li>
+        </ul>
+      </div>
+
+      <h3>When water helps, and when it makes things worse</h3>
+      <table class="water">
+        <thead><tr><th scope="col">Situation</th><th scope="col">Water?</th><th scope="col">What to do</th></tr></thead>
+        <tbody>
+          <tr><td>Chemical in your eyes or on your skin</td><td class="y">Yes</td><td>Eyewash or safety shower for at least 15 minutes, unless the SDS says otherwise.</td></tr>
+          <tr><td>Clothing on fire</td><td class="y">Yes</td><td>Stop, drop and roll; fire blanket or safety shower.</td></tr>
+          <tr><td>Burning organic solvent in a beaker</td><td class="n">No</td><td>Water can splash the burning liquid and spread it. Turn off the hot plate if you can, cover the beaker to smother it, and tell your instructor.</td></tr>
+          <tr><td>Reactive metals such as sodium or potassium (W with a line)</td><td class="n">No</td><td>They react violently with water. Leave it to your instructor.</td></tr>
+          <tr><td>Fire in plugged-in electrical equipment</td><td class="n">No</td><td>Water conducts electricity. Tell your instructor; the emergency power cutoff is theirs to use.</td></tr>
+        </tbody>
+      </table>
+      <p class="soft" style="font-size:0.9rem">When in doubt, check Section 5 of the SDS and the white quarter of the diamond, and tell your instructor before anything else.</p>
+    </section>
+
     <section id="waste" aria-labelledby="waste-title">
-      <h2 id="waste-title"><span class="step" aria-hidden="true">5</span>Waste and cleanup</h2>
+      <h2 id="waste-title"><span class="step" aria-hidden="true">6</span>Waste and cleanup</h2>
       <div class="cards">
         <div class="card"><h4>Chemical waste</h4><p>Use the waste containers provided. Organic waste goes in the bottle in the fume hood: lift the red funnel lid, pour slowly, close the lid. Pouring onto a closed lid makes a spill.</p></div>
         <div class="card"><h4>Never down the sink</h4><p>Organic solvents and other chemicals do not go down the drain. They can be flammable and pollute the water. If you're unsure, ask your instructor.</p></div>
@@ -262,7 +350,7 @@
     </section>
 
     <section id="emerg" aria-labelledby="emerg-title">
-      <h2 id="emerg-title"><span class="step" aria-hidden="true">6</span>If something goes wrong</h2>
+      <h2 id="emerg-title"><span class="step" aria-hidden="true">7</span>If something goes wrong</h2>
       <div class="cards">
         <div class="card flagcard"><h4>Chemical in your eyes</h4><p>Get to the eyewash, hold your eyes open, and flush for at least 15 minutes. Shout for help so your instructor knows.</p></div>
         <div class="card flagcard"><h4>Large splash on your body</h4><p>Get under the safety shower, pull the handle, remove contaminated clothing, and rinse for 15 minutes.</p></div>
@@ -273,7 +361,7 @@
     </section>
 
     <section id="inspect" aria-labelledby="inspect-title">
-      <h2 id="inspect-title"><span class="step" aria-hidden="true">7</span>In the virtual lab</h2>
+      <h2 id="inspect-title"><span class="step" aria-hidden="true">8</span>In the virtual lab</h2>
       <div class="callout prose">
         <p>The 3D lab is a model of our actual chemistry lab. Each time you enter, <strong>five random hazards</strong> are hidden somewhere in the room, things like a drink on a bench, a fume hood sash left wide open, or a classmate without goggles. Some are emergencies you'll have to respond to.</p>
         <p>Walk around (W A S D and the mouse), and click anything that looks unsafe. Safety equipment is clickable too. Press <strong>Enter</strong> when you're done to see your inspection report: what you found, what you missed, and what to do about it. Press <strong>N</strong> for a new inspection; every one is different.</p>
@@ -281,7 +369,7 @@
     </section>
 
     <section id="check" aria-labelledby="check-title">
-      <h2 id="check-title"><span class="step" aria-hidden="true">8</span>Check yourself</h2>
+      <h2 id="check-title"><span class="step" aria-hidden="true">9</span>Check yourself</h2>
       <p class="prose">Not graded. Pick an answer to see whether it's right and why; you can change your answer as often as you like. The graded Lab Safety quiz is on Falcon Online.</p>
       <ol class="quiz" id="quiz"></ol>
       <p class="score" id="score" aria-live="polite"></p>
@@ -298,6 +386,8 @@
         <li>Daytona State College, CHM 1025L course syllabus, safety rules and PPE requirements (Fall 2026).</li>
         <li>Daytona State College, Recommended Emergency Procedures (posted in the lab).</li>
         <li>American Chemical Society, Committee on Chemical Safety. <i>Safety in Academic Chemistry Laboratories</i>, 8th ed.</li>
+        <li>OSHA Hazard Communication Standard, 29 CFR 1910.1200 (labels, pictograms and safety data sheets).</li>
+        <li>NFPA 704, Standard System for the Identification of the Hazards of Materials for Emergency Response.</li>
         <li>ANSI/ISEA Z87.1, American National Standard for Occupational and Educational Personal Eye and Face Protection Devices.</li>
       </ol>
     </section>
@@ -372,6 +462,12 @@
       why: 'Hold your eyelids open and flush for at least 15 minutes, and call out so your instructor knows.' },
     { q: 'A classmate’s sleeve catches fire. Which response is right?', options: ['Run to the sink', 'Stop, drop and roll, then smother it with the fire blanket or use the shower', 'Spray them with the fire extinguisher', 'Throw water from a beaker on it'], answer: 1,
       why: 'Running fans the flames. Stop, drop and roll, then smother with the blanket from the orange bag or get under the safety shower.' },
+    { q: 'A bottle label says "Use only in a well-ventilated area." Where do you work with it?', options: ['At your bench with the windows open', 'In the fume hood', 'Anywhere, if you wear goggles', 'In the hallway'], answer: 1,
+      why: 'In our lab, a well-ventilated area means the fume hood, with the sash at the working height.' },
+    { q: 'The white quarter of a hazard diamond shows a W with a line through it. What does it mean?', options: ['Wear gloves', 'Do not use water on it', 'Wash hands after use', 'Waste goes down the sink'], answer: 1,
+      why: 'It reacts dangerously with water. Never use water on it or a fire involving it; tell your instructor.' },
+    { q: 'You need first-aid instructions for a chemical. Which part of its safety data sheet (SDS) do you check?', options: ['Section 2, Hazards', 'Section 4, First aid', 'Section 9, Physical properties', 'Section 16, Other information'], answer: 1,
+      why: 'Every SDS has the same 16 sections in the same order. Section 4 is first aid; Section 5 is fire fighting; Section 8 is PPE.' },
     { q: 'You get a tiny cut from a chipped test tube. What do you do?', options: ['Nothing, it is tiny', 'Put on a bandage and keep working without telling anyone', 'Report it to your instructor right away', 'Report it at the end of the semester'], answer: 2,
       why: 'Report every injury, even minor ones, immediately.' },
     { q: 'Which of these is the single biggest source of lab injuries?', options: ['Broken glass', 'Hot equipment', 'Acids', 'Electricity'], answer: 1,
