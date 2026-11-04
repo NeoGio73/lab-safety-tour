@@ -17,4 +17,4 @@ Prof. John Picione, Department of Biological and Physical Sciences, Daytona Stat
 **Inspection report:** press Enter at any time (or find all 5 hazards) to see a report of what was found and missed, with what to do for each missed hazard, the time, and any wrong answers on emergency questions. Students can screenshot it for credit.
 
 
-Credits: student characters from Adobe Mixamo; one character (Alison) is a free rigged sample from Renderpeople, downloaded from CGTrader: https://www.cgtrader.com/free-3d-models/character/woman/alison-001-woman-standing
+Credits: student characters from Adobe Mixamo; one character (Alison) is a free rigged sample from Renderpeople, downloaded from CGTrader (Royalty Free license): https://www.cgtrader.com/free-3d-models/character/woman/alison-001-woman-standing
