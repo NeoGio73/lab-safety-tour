@@ -74,6 +74,13 @@
         productName: "Lab Safety Tour",
         productVersion: "0.1.0",
         showBanner: unityShowBanner,
+        // Chrome refuses to re-capture the mouse for about a second after the student presses Esc.
+        // That refusal is harmless (the next click works), so do not show it as an error box.
+        errorHandler: function(err, url, line) {
+          var m = String(err || "");
+          if (/pointer ?lock|exited the lock|requestPointerLock/i.test(m)) { console.warn("Ignored: " + m); return true; }
+          return false;
+        },
         // errorHandler: function(err, url, line) {
         //    alert("error " + err + " occurred at line " + line);
         //    // Return 'true' if you handled this error and don't want Unity
@@ -119,6 +126,15 @@
         fullscreenContainer.style.height = "600px";
       }
 
+
+      window.addEventListener("unhandledrejection", function (e) {
+        var m = e && e.reason ? String(e.reason.message || e.reason) : "";
+        if (/pointer ?lock|exited the lock/i.test(m)) { e.preventDefault(); e.stopImmediatePropagation(); }
+      }, true);
+      window.addEventListener("error", function (e) {
+        var m = e && (e.message || (e.error && e.error.message)) || "";
+        if (/pointer ?lock|exited the lock/i.test(m)) { e.preventDefault(); e.stopImmediatePropagation(); }
+      }, true);
 
       var script = document.createElement("script");
       script.src = loaderUrl;
