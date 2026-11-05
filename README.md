@@ -25,13 +25,15 @@ It is used in Organic Chemistry II (CHM 2211) from spring 2027, Organic Chemistr
 | Look around | Click once to capture the mouse, then move it |
 | Walk | W A S D or the arrow keys |
 | Inspect, pick up, use | Look at it and click, or press E |
+| Lower a fume hood sash one step | Look at it and click, or press E |
+| Raise a fume hood sash one step | R |
 | Close a panel | E or Esc |
 | Report | Enter (opens automatically when all hazards are found) |
 | New random inspection | N |
 | Full screen | F or the on-screen button |
 | Free the mouse | Esc |
 
-Whatever you look at gets a gold outline. Fume hood sashes move when clicked (closed, working height, fully open); the waste hood's sliding glass panels slide open and closed.
+Whatever you look at gets a gold outline. Clicking a fume hood sash lowers it one step (fully open, working height, closed), the safe direction, which is what a sash left wide open and the fire alarm call for; R raises it. The waste hood's sliding glass panels slide open and closed with a click, and once a panel is open, a click lifts or closes the red lid on the organic waste funnel.
 
 ## What is in an inspection
 
