@@ -105,6 +105,11 @@
       // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
       // expected to change.
 
+      // Render at the page's own pixel size on every screen. On high-density screens (Macs, many laptops)
+      // the default would render 2-4 times as many pixels, which slows weak graphics chips and shrinks the
+      // on-screen text and panels to half size.
+      config.devicePixelRatio = 1;
+
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
 
@@ -138,6 +143,12 @@
 
       var script = document.createElement("script");
       script.src = loaderUrl;
+      script.onerror = () => {
+        var m = document.createElement("div");
+        m.style.cssText = "position:absolute;left:0;right:0;top:40%;text-align:center;font:18px sans-serif;color:#fff;padding:0 16px";
+        m.textContent = "The lab could not be loaded. Check your internet connection and reload the page.";
+        document.querySelector("#unity-container").appendChild(m);
+      };
       script.onload = () => {
         const loadingContainer = document.querySelector("#unity-loading-container");
         const progressBarFull = document.querySelector("#unity-progress-bar-full");
