@@ -92,7 +92,7 @@ The Unity project and its C# scripts are not in this repository, because the pro
 
 ## How it was built
 
-The room was scanned with the LiDAR camera on an iPhone 17 Pro using Polycam, photographed, and rebuilt to measure in Blender and Unity 6 (Universal Render Pipeline). The Blender and Unity work, most of the program code, the first drafts of the hazard texts and the prelab page were produced with a generative AI coding assistant (Claude, Anthropic) connected to Unity and Blender through Model Context Protocol servers. The author directed and checked all of it and checked every hazard text and emergency detail against the course syllabi, the posted procedures and the room itself.
+The room was scanned with the LiDAR camera on an iPhone 17 Pro using Polycam, photographed, and rebuilt to measure in Blender and Unity 6 (Universal Render Pipeline). The Blender and Unity work, all of the program code, the first drafts of the hazard texts and the prelab page were produced with a generative AI coding assistant (Claude, Anthropic) connected to Unity and Blender through Model Context Protocol servers. The author directed and checked all of it and checked every hazard text and emergency detail against the course syllabi, the posted procedures and the room itself.
 
 ## Credits and licenses
 
