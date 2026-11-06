@@ -109,7 +109,18 @@ The purchased assets are included only inside the compiled build, as their licen
 
 ## How to cite
 
-Picione, J. Goggles On, Bagels Out: A Randomized Hazard Hunt in a Browser Replica of a Real Teaching Laboratory. *ChemRxiv* **2026**, preprint. DOI to be added.
+Picione, J. Goggles On, Bagels Out: A Randomized Hazard Hunt in a Browser Replica of a Real Teaching Laboratory. *ChemRxiv* **2026**. https://doi.org/10.26434/chemrxiv.15011784/v1
+
+```bibtex
+@article{picione2026goggles,
+  author  = {Picione, John},
+  title   = {Goggles On, Bagels Out: A Randomized Hazard Hunt in a Browser Replica of a Real Teaching Laboratory},
+  journal = {ChemRxiv},
+  year    = {2026},
+  doi     = {10.26434/chemrxiv.15011784/v1},
+  url     = {https://doi.org/10.26434/chemrxiv.15011784/v1}
+}
+```
 
 Related: Picione, J. From Bench to Game Engine: An Instructor-Built Suite of 3D Laboratory Simulations Created with Generative AI. *ChemRxiv* **2026**. https://doi.org/10.26434/chemrxiv.15010988/v1
 
